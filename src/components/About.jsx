@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 
 
  const About =()=> {
-    // const URLParams = useParams();
+    const URLParams = useParams();
     const params = useParams();
     const [data,setData]=useState([]);
      
@@ -26,8 +26,8 @@ import { Link } from 'react-router-dom';
         console.log(err);
        })
   
-    },[params.id])
-    currentBlog = Articles.find(item => item.id === Number(params.id))
+    })
+    currentBlog = Articles.find(item => item.id === Number(URLParams.id))
   
 
 
