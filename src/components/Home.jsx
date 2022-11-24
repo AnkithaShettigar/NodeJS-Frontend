@@ -7,7 +7,7 @@ import { mainPage} from "./Articles";
 import Bottompage from "./Bottompage";
 import { AiOutlineMenu,AiOutlineClose} from "react-icons/ai";
 import { useRef ,useState , useEffect} from "react";
-// import { Articles } from "./Articles";
+import { Articles } from "./Articles";
 
 const Home = () =>{
   const navRef = useRef();
@@ -20,6 +20,7 @@ const Home = () =>{
   let Latest = [];
   let mainHome = []; 
   let mainMiddle = []; 
+  // let top1 = [];
 
   const [data,setData]=useState([]);
   useEffect(()=>{
@@ -37,6 +38,7 @@ const Home = () =>{
   Latest = data.filter((item)=>item.category==="Latest")
   mainHome = data.filter((item)=>item.category==="mainHome")
   mainMiddle = data.filter((item)=>item.category==="mainMiddle")
+  // top1 = data.filter((item)=>item.category==="top1")
 
   return(
      <div>
@@ -62,11 +64,11 @@ const Home = () =>{
 
             <hr className="hr1" />
           <div className="ud">
-           <Link to={`/pages/about/${1}`} className="two"><Banner className="jaipur" title={"Udaipur, Rajasthan - The City of Lakes"} tag={"Travel / August 2017" } banimg={require("../pics/UDAIPUR.jpg")}/></Link>
+           <Link to={`/pages/about/${1}`} className="two"><Banner className="jaipur" title={"Udaipur, Rajasthan - The City of Lakes"} tag={"Travel / August 2017" } banimg={("https://as1.ftcdn.net/v2/jpg/01/30/12/98/1000_F_130129868_8hyrv8S3yTZvMdUSAYxADf8Ta8RPgojf.jpg")}/></Link>
           
             <div className="double">
-            <Link to={`/pages/about/${2}`} className="two"><Banner titleClass="first1" className="delhi" title={"New Delhi,NCR-The city of cities"} tag={"Travel / August 2017"} banimg={require("../pics/DELHI.jpg")} /></Link><br/>
-            <Link to={`/pages/about/${3}`} className="two"><Banner titleClass="first1" className="delhi1" title={"Mumbai,Maharashtra-The City of Dreams"} tag={"Travel / August 2017"} banimg={require("../pics/MUMBAI.jpg")}/></Link>
+            <Link to={`/pages/about/${2}`} className="two"><Banner titleClass="first1" className="delhi" title={"New Delhi,NCR-The city of cities"} tag={"Travel / August 2017"} banimg={("https://as1.ftcdn.net/v2/jpg/04/01/43/06/1000_F_401430617_QU5FmwCbN3oiysrAnVN2yXreAkbPOESe.jpg")} /></Link><br/>
+            <Link to={`/pages/about/${3}`} className="two"><Banner titleClass="first1" className="delhi1" title={"Mumbai,Maharashtra-The City of Dreams"} tag={"Travel / August 2017"} banimg={("https://as2.ftcdn.net/v2/jpg/02/10/97/87/1000_F_210978794_wzwBON3QTEZolR14LLQcTHlSaUgzzewl.jpg")}/></Link>
             </div>
           </div>
           <div className="latest">
@@ -107,7 +109,7 @@ const Home = () =>{
                 </div>
             </div>
            
-             <Link to={`/pages/about/${4}`} className="two"><Banner titleClass="gujtext" className="guj" title={"Ahmedabad,Gujarat-Manchester ot the East"} tag={"Travel / August 2017"} banimg={require("../pics/AHMEDABAD.jpg")} /></Link>
+             <Link to={`/pages/about/${4}`} className="two"><Banner titleClass="gujtext" className="guj" title={"Ahmedabad,Gujarat-Manchester ot the East"} tag={"Travel / August 2017"} banimg={("https://as2.ftcdn.net/v2/jpg/02/28/13/81/1000_F_228138189_HRwqdjGxQAzXAN28ci3DR8U3HLa5LM4S.jpg")} /></Link>
               
             </div>
             <div className="boxleft">

@@ -1,6 +1,7 @@
-import React from 'react';
+import React ,{useState , useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import { Articles } from './Articles';
+import axios from 'axios'
 import Bottombox from './Bottombox';
 import { bottom } from './Articles';
 import { FaFacebookSquare,FaTwitterSquare,FaInstagramSquare ,FaYoutube} from "react-icons/fa";
@@ -9,21 +10,29 @@ import { Link } from 'react-router-dom';
 
 
  const About =()=> {
-    const URLParams = useParams();
-    const currentBlog = Articles.find(item => item.id === Number(URLParams.id))
-    // const [data,setData]=useState([]);
-    // useEffect(()=>{
-    //   fetch(`https://nodejs-seven-project.herokuapp.com/home/bollywood`)
-    //   .then(res=>res.json())
-    //   .then(data=>{
-    //     setData(data)
-       
-        
-        
+    // const URLParams = useParams();
+    const params = useParams();
+    const [data,setData]=useState([]);
      
-    //   })
+    let currentBlog = [];
+
+    useEffect(()=>{
+      axios.get(`http://localhost:8080/home/bollywood/${params.id}`)
+       .then(res =>{
+        console.log(data)
+        setData(res.data)
+       })
+       .catch(err =>{
+        console.log(err);
+       })
   
-    // },[])
+    },[params.id])
+    currentBlog = Articles.find(item => item.id === Number(params.id))
+  
+
+
+
+
 
     const {heading,image,descr} = currentBlog
   return (
